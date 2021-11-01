@@ -77,4 +77,4 @@ const p = new Vue({
 });
 
 ScrollReveal().reveal('.showcase');
-ScrollReveal().reveal('.news-cards', { delay: 500 });
+ScrollReveal().reveal('.news-cards', { delay: 250 });
