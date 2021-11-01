@@ -69,6 +69,9 @@ const p = new Vue({
     busc (){
       return this.arrcffe.filter(o => o.nm.toUpperCase().includes(w.fnm.toUpperCase().trim())).filter(o => o.pr <= w.fpm);
     },
+    cnm () {
+      return w.fnm;
+    }
   }
  
 });
