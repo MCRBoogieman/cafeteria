@@ -21,7 +21,7 @@
     />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top news-cards">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">CUBIC WORLD</a>
         <button
@@ -113,7 +113,7 @@
     <div
       class="container-fluid row mx-0 px-auto mt-4 pt-5 pb-3 bg-light text-black"
     >
-      <div class="col-md-3 shadow-lg p-3" id="wish">
+      <div class="col-md-3 shadow-lg p-3 news-cards" id="wish">
         <h5>Filtros</h5>
         <div class="form-group">
           <label >Precio maximo:</label>
@@ -125,7 +125,7 @@
         </div>
         <h5>Lista de Deseos:</h5>
         <ul class="list-unstyled">
-          <li v-for="w in wl">
+          <li v-for="w in wl" class="news-cards">
             {{w.nm}}
           </li>
         </ul>
@@ -133,7 +133,7 @@
 
       <div id="section" class="col-md-6 d-flex m-auto flex-wrap">
 
-        <div class="card text-center col-md-5 mx-auto my-3 shadow-lg p-1" v-for="it in busc" :style="clr(it.vig)">
+        <div class="card text-center col-md-5 mx-auto my-3 shadow-lg p-1 news-cards" v-for="it in busc" :style="clr(it.vig)">
           <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
             <img :src="it.src" class="img-fluid" :style="trns(it.vig)" />
               <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
@@ -141,7 +141,7 @@
           </div>
         
           <div class="card-body">
-            <h5 class="card-title">{{it.nm}}</h5>
+            <h5 class="card-title">{{it.nm.trasition}}</h5>
             <p class="card-text" v-if="cnm == ''">
               Ingredientes: {{it.ing}}
             </p>
@@ -156,11 +156,11 @@
 
       </div>
 
-      <div class="col-md-3 shadow-lg p-3" id="cart">
+      <div class="col-md-3 shadow-lg p-3 news-cards" id="cart">
         <h5>Carrito de compras:</h5>
         <div class="row mx-0 px-0 mt-5">
           <ul class="list-unstyled container-fluid">
-            <li v-for="c in cl" class="row container-fluid">
+            <li v-for="c in cl" class="row container-fluid news-cards">
               <div class="col-md-8 text-right">
                 <p>{{c.nm}}</p>
               </div>
@@ -170,7 +170,7 @@
             </li>
           </ul>
         </div>
-        <div class="row mx-0 px-0 mt-5">
+        <div class="row mx-0 px-0 mt-5 news-cards">
           <div class="col-md-8 text-right">
             <p>Subtotal:</p>
             <p>IVA:</p>
@@ -186,7 +186,7 @@
       </div>
     </div>
 
-    <footer class="bg-dark text-center text-white">
+    <footer class="bg-dark text-center text-white news-cards">
       <div class="container p-4">
         <section class="mb-3">
           <p>
@@ -215,6 +215,7 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"
     ></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/index.js"></script>
   </body>
 </html>
